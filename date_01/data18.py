@@ -1,16 +1,12 @@
 mix_list = ['1', 3, '5', 66, [23, '66', 'hello', '%%'], 34, '^^']
 sum = 0
-new_list = []
 for i in mix_list:
     if type(i) is list:
         for j in i:
             if type(j) is int:
-                new_list.append(j)
+                sum += j
     if type(i) is int:
-        new_list.append(i)
-print(new_list)
-for i in new_list:
-    sum += i
+        sum +=i
 print(sum)
 
 sum = 0
