@@ -26,3 +26,4 @@ for i in list_a:
     list_a.remove(i)
 print('list_a =', list_a)
 list_a = [2, 4, 6]
+print('修改一下')
