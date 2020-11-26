@@ -43,3 +43,7 @@ print(list1)
 #         list1.remove(1)
 # print()
 # 方式三
+
+float_num = 33.4444444
+print('{:.2f}'.format(float_num))
+print(f'{float_num:.3f}')
