@@ -42,8 +42,28 @@ def run_twice(animal):
     animal.run()
     animal.run()
 
+
 # run_twice(Animal())
 
-a = Animal()
-a.age = 12
-print(a.age)
+# a = Animal()
+# a.age = 12
+# print(a.age)
+
+
+# 类装饰器
+class Foo(object):
+    def __init__(self,func):
+        self.func = func
+
+    def __call__(self,*args,**kwargs):
+        print('class decorator running')
+        self.func()
+        print('class decorator ending')
+
+
+@Foo
+def bar():
+    print('i am bar')
+
+
+bar()

@@ -1,0 +1,4 @@
+﻿接口,请求方式,接口地址,参数,期望结果
+主题首页,get,/topics,"{'page': 1,'tab': 'ask','limit': 20,'mdrender': 'true'}",{'success': True}
+主题详情,get,/topic/5fb8b2b306e8c0290c6c1370,"{'mdrender': 'true','accesstoken': 'c46b1286-d392-402b-8c08-0edcb07d27ea'}",{'success': True}
+新建主题,post,/topics,"{'accesstoken': 'c46b1286-d392-402b-8c08-0edcb07d27ea','title': '11111','tab': 'ask','content': '121212121'}",{'success': True}

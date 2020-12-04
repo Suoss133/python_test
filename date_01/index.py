@@ -18,19 +18,19 @@ array = [2, 8, 1, 5]
 #         if i >= j:
 #             print(f'{j}*{i}={i * j}', end=' ')
 #     print('\n')
-
-lists = [(str(j) + '*' + str(i) + '=' + str(i * j)) for i in range(1, 10)
-         for j in range(1, i + 1)]
-print(lists)
-
-list1 = [1, 2, 1, 2, 3, 1, 3, 4, 5, 1, 4, 5, 1]
+#
+# lists = [(str(j) + '*' + str(i) + '=' + str(i * j)) for i in range(1, 10)
+#          for j in range(1, i + 1)]
+# print(lists)
+#
+# list1 = [1, 2, 1, 2, 3, 1, 3, 4, 5, 1, 4, 5, 1]
 
 # 方式一
-for i in list1.copy():
-    while i == 1:
-        list1.remove(1)
-        break
-print(list1)
+# for i in list1.copy():
+#     while i == 1:
+#         list1.remove(1)
+#         break
+# print(list1)
 
 # 方式二
 # for i in list1.copy():
@@ -43,7 +43,45 @@ print(list1)
 #         list1.remove(1)
 # print()
 # 方式三
+# print(False or True)
+# print(True and True)
+# print(False and False)
+#
+# d = {'Name': 'Kate', 'No': '1001', 'Age': '20'}
+# print(len(d))
 
-float_num = 33.4444444
-print('{:.2f}'.format(float_num))
-print(f'{float_num:.3f}')
+# num = 66
+# flag = True
+# while flag:
+#     input_num = int(input('输入猜测的数字:'))
+#     if num < input_num:
+#         print('猜大了')
+#     elif num > input_num:
+#         print('猜小了')
+#     else:
+#         print('正确')
+#         flag = False
+
+
+# count = 3
+# while count:
+#     input_access = str(input("输入用户名:"))
+#     input_password = str(input("输入密码:"))
+#     if input_access != '张三' and input_password != '123456':
+#         count = count - 1
+#         print(f'剩余次数:{count}' )
+
+
+# input_num = int(input('输入数字:'))
+# if input_num == 1 or input_num == 0:
+#     print('1和0即非素数也非合数')
+# else :
+#     print('是素数')
+
+from collections import OrderedDict
+
+dit = OrderedDict({'name':'Tom','age':12})
+print(dit)
+print(type(dit))
+print(dit[0])
+print(dit.popitem())
