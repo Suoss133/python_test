@@ -73,3 +73,14 @@ def fun(context, **kwargs) -> str:
 
 
 fun('1', name='Tom')
+
+# 装饰器的意义：将目标函数<被装饰的函数>当成参数传入到装饰器里面
+list1 = [1, '2', 35, 6, 6, 7]
+list1 = ['1', '2']
+for i in list1:
+    data = ''.join(list1)
+print(data)
+
+st = '123'
+tu = (1, 2, 3)
+print(str(tu))
