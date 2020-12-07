@@ -80,7 +80,7 @@ array = [2, 8, 1, 5]
 
 from collections import OrderedDict
 
-dit = OrderedDict({'name':'Tom','age':12})
+dit = OrderedDict({'name': 'Tom', 'age': 12})
 print(dit)
 print(type(dit))
 print(dit[0])

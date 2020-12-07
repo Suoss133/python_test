@@ -10,8 +10,11 @@
 
 # defaultdict使用
 from collections import defaultdict
-s = [('yellow',1),('blue',2),('yellow',3),('blue',4),('red',1)]
-d= defaultdict()
-for k,s in s:
+
+s = [('yellow', 1), ('blue', 2), ('yellow', 3), ('blue', 4), ('red', 1)]
+d = defaultdict(list)
+for k, s in s:
     d[k].append(s)
 print(d)
+
+print(__name__)
