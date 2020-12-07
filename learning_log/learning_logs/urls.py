@@ -4,9 +4,9 @@ from . import views
 
 urlpatterns = [
     # 主页
-    path('index/', views.index),
+    path('add_book', views.add_book),
 
     # 显示所有主页
-    path('topics/',views.topics),
+    path('show_books',views.show_books),
 ]
 # app_name = 'learning_logs'
