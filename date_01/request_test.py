@@ -1,4 +1,6 @@
-import requests, json, re
+import requests
+import json
+import re
 import inspect as url
 
 
@@ -22,18 +24,19 @@ import inspect as url
 # print(name)
 
 # 将request返回的内容写入文件
-def setRequestContext(method, url, **kwargs) -> str:
+def set_request_context(method, url, **kwargs) -> None:
     response = requests.request(method=method, url=url, params=kwargs.get('params'))
     response.encoding = 'utf-8'
-    re_patter = re.compile('http://www.(.*?).com', re.S)
-    fileName = re_patter.findall(url)
+    re_patter = re.compile("http://www.(.*?).com", re.S)
+    file_name = re_patter.findall(url)
 
-    return setDir(context=response.text, dirName=fileName)
+    return set_dir(context=response.text, dir_name=file_name)
 
 
-def setDir(context, dirName):
-    with open(f'{dirName[0]}.html', 'w', encoding='utf-8') as file:
+def set_dir(context, dir_name):
+    with open(f'{dir_name[0]}.html', 'w', encoding='utf-8') as file:
         file.write(context)
 
 
-setRequestContext(method='get', url='http://www.baidu.com')
+set_request_context(method='get', url='http://www.baidu.com')
+
