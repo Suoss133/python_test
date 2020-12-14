@@ -24,7 +24,6 @@ import inspect as url
 # print(name)
 
 # 将request返回的内容写入文件
-<<<<<<< HEAD
 def set_request_context(method, url, **kwargs) -> None:
     response = requests.request(method=method, url=url, params=kwargs.get('params'))
     response.encoding = 'utf-8'
@@ -40,4 +39,3 @@ def set_dir(context, dir_name):
 
 
 set_request_context(method='get', url='http://www.baidu.com')
-

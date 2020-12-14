@@ -1,4 +1,5 @@
 array = [2, 8, 1, 5]
+
 # arr1 = array[0]
 # arr2 = array[1]
 # array[0] = arr2
@@ -78,10 +79,54 @@ array = [2, 8, 1, 5]
 # else :
 #     print('是素数')
 
-from collections import OrderedDict
+# from collections import OrderedDict
+#
+# dit = OrderedDict({'name': 'Tom', 'age': 12})
+# print(dit)
+# print(type(dit))
+# print(dit[0])
+# print(dit.popitem())
 
-dit = OrderedDict({'name': 'Tom', 'age': 12})
-print(dit)
-print(type(dit))
-print(dit[0])
-print(dit.popitem())
+# str ='python \njava'
+# print(str)
+# lists = str.split('\n')
+# str = ' '.join(lists)
+# print(str)
+
+# from copy import copy
+#
+#
+# class HaunteBus:
+#     def __init__(self, passengers=None):
+#         # 解决函数的参数是引用的问题
+#         if passengers == None:
+#             self.passengers = []
+#         else:
+#             # 创建外部参数的副本，不影响外部的引用
+#             self.passengers = copy(passengers)
+#
+#     def pick(self, name):
+#         self.passengers.append(name)
+#
+#     def drop(self, name):
+#         self.passengers.remove(name)
+
+
+# bus1 = HaunteBus(['Alice', 'Bill'])
+#
+# bus1.pick('Charlie')
+# bus1.drop('Alice')
+# print('bus1 ->', bus1.passengers)
+#
+# bus2 = HaunteBus()
+# bus2.pick('Carrie')
+# print('bus2 ->', bus2.passengers)
+#
+# bus3 = HaunteBus()
+# print('bus3 ->', bus3.passengers)
+
+# bus = ['Alice', 'Bill', 'Pat']
+# bus1 = HaunteBus(bus)
+# bus1.drop('Pat')
+# print(bus1.passengers)
+# print(bus)

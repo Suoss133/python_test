@@ -187,14 +187,14 @@ def factorial(n):
 #         return n
 #     return fibonacci(n - 2) + fibonacci(n - 1)
 
-
-if __name__ == '__main__':
-    print(factorial.__name__)
-    print('*' * 40, 'Calling snooze(.123)')
-    snooze(.123)
-    print('*' * 40, 'Calling factorial(6)')
-    print('6! =', factorial(6))
-    print(factorial(6))
+#
+# if __name__ == '__main__':
+#     print(factorial.__name__)
+#     print('*' * 40, 'Calling snooze(.123)')
+#     snooze(.123)
+#     print('*' * 40, 'Calling factorial(6)')
+#     print('6! =', factorial(6))
+#     print(factorial(6))
 
 # @singledispatch泛型函数，由参数决定调用那些方法
 
@@ -223,3 +223,58 @@ if __name__ == '__main__':
 # sort_type(list)
 # sort_type(tuple)
 # sort_type([1, 2, 3])
+
+
+# 参数装饰器
+# registry = set()
+#
+#
+# def register(active=True):
+#     def decorate(func):
+#         print('running register(active=%s) ->decorate(%s)' % (active, func))
+#         if active:
+#             registry.add(func)
+#         else:
+#             registry.discard(func)
+#         return func
+#
+#     return decorate
+#
+#
+# @register(active=False)
+# def f1():
+#     print('running f1()')
+#
+#
+# @register()
+# def f2():
+#     print('running f2()')
+#
+#
+# def f3():
+#     print('running f3()')
+#
+#
+# print(registry)
+
+
+def regitster(active=True):
+    def decorate(func):
+        @functools.wraps(func)
+        def make(*args, **kwargs):
+            print(f'running register(active={active})')
+            print('被修饰的装饰器参数:', func(*args))
+            return func
+
+        return make
+
+    return decorate
+
+
+@regitster(active=False)
+def f1(a):
+    return a
+
+
+f1(2)
+print(f1.__name__)
