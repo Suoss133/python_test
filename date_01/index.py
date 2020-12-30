@@ -1,3 +1,5 @@
+from random import randint
+
 array = [2, 8, 1, 5]
 
 # arr1 = array[0]
@@ -130,3 +132,90 @@ array = [2, 8, 1, 5]
 # bus1.drop('Pat')
 # print(bus1.passengers)
 # print(bus)
+
+import weakref
+
+
+# class Cheese:
+#     def __init__(self, kind):
+#         self.kind = kind
+#
+#     def __repr__(self):
+#         return 'Cheese(%r)' % self.kind
+#
+#
+# stock = weakref.WeakValueDictionary()
+# catalog = [Cheese('Rea Leicester'), Cheese('Tilist'),
+#            Cheese('Brie'), Cheese('Parmesan')]
+# for cheese in catalog:
+#     stock[cheese.kind] = cheese
+#
+# print(sorted(stock.keys()))
+# del cheese
+# print(sorted(stock.keys()))
+
+# import copy
+#
+# t1 = (1, 2, 3)
+# t2 = copy.copy(t1)
+# print(t1 == t2)
+# print(t1 is t2)
+#
+# t1 = [1, 2, 3]
+# t2 = copy.copy(t1)
+# print(t1 == t2)
+# print(t1 is t2)
+
+
+# def ge_123(end):
+#     start = 0
+#     while start < end:
+#         x = yield start
+#         print(x,'yield')
+#         start += 1
+# m = ge_123(5)
+# print(next(m))
+# print(next(m))
+# print(next(m))
+# print(m.send(10))
+
+# def g(x):
+#     yield from range(x, 0, -1)
+#     yield from range(x)
+# print(list(g(5)))
+
+
+# a = 10
+# b = 1
+# try:
+#     c = b / a
+#     print(c)
+# except Exception:
+#     print('错误')
+# else:
+#     print('没有错，我才执行。。。else')
+# finally:
+#     print('没有有错我都执行')
+
+
+class Query(object):
+
+    def __init__(self, name):
+        self.name = name
+
+    def __enter__(self):
+        print('Begin')
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        if exc_type:
+            print('Error')
+        else:
+            print('End')
+
+    def query(self):
+        print(f'Query info {self.name}')
+
+
+with Query('Bod') as q:
+    q.query()
