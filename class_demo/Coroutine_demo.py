@@ -40,6 +40,36 @@
 # items = [1, 2, ['Dave', 4, [5, 6], 7], 8]
 # for x in flatten(items):
 #     print(x)
+
+
+# list_num = [["k", ["qwe", 20, {"k1": ["tt", 3, "1"]}, {"k2": [100, 99]}, 89], "ab"]]
+#
+#
+# def fotlat(items, ig=(str, bytes)):
+#     for item in items:
+#         if isinstance(item, Iterable) and not isinstance(item, ig):
+#             yield from fotlat(item)
+#             if isinstance(item, dict):
+#                 yield from item.values()
+#         else:
+#             yield [item]
+#
+#
+# def update_dict(value, orlder):
+#     global list_num
+#     for i in fotlat(list_num):
+#         if isinstance(i ,list):
+#             for x in i:
+#                 if value == x:
+#                     index = i.index(value)
+#                     i[index] = orlder
+#
+#
+# update_dict(100, 'updatee1')
+# print(list_num)
+
+
+
 import asyncio
 
 # def test(n):
