@@ -198,24 +198,41 @@ import weakref
 #     print('没有有错我都执行')
 
 
-class Query(object):
+# class Query(object):
+#
+#     def __init__(self, name):
+#         self.name = name
+#
+#     def __enter__(self):
+#         print('Begin')
+#         return self
+#
+#     def __exit__(self, exc_type, exc_val, exc_tb):
+#         if exc_type:
+#             print('Error')
+#         else:
+#             print('End')
+#
+#     def query(self):
+#         print(f'Query info {self.name}')
+#
+#
+# with Query('Bod') as q:
+#     q.query()
 
-    def __init__(self, name):
-        self.name = name
 
-    def __enter__(self):
-        print('Begin')
-        return self
+def simple(a):
+    print('-> Started:a = ',a)
+    b = yield a
+    print('-> Received:b = ',b)
+    c = yield a + b
+    print('-> Received:c = ', c)
 
-    def __exit__(self, exc_type, exc_val, exc_tb):
-        if exc_type:
-            print('Error')
-        else:
-            print('End')
+try:
+    my_coro = simple(12)
+    next(my_coro)
+    my_coro.send(28)
+    my_coro.send(99)
+except StopIteration:
+    print('结束')
 
-    def query(self):
-        print(f'Query info {self.name}')
-
-
-with Query('Bod') as q:
-    q.query()
